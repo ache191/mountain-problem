@@ -23,6 +23,7 @@
         <arquillian.rest.warp.impl.jaxrs.version>1.0.0.Alpha4</arquillian.rest.warp.impl.jaxrs.version>
         <resteasy.client.version>3.0.11.Final</resteasy.client.version>
         <junit.version>4.12</junit.version>
+        <slf4j.version>1.7.2</slf4j.version>
         <wildfly.arquillian.container.embedded.version>8.2.1.Final</wildfly.arquillian.container.embedded.version>
         <wildfly-embedded.version>9.0.2.Final</wildfly-embedded.version>
         <wildfly-dist-version>9.0.2.Final</wildfly-dist-version>
@@ -70,6 +71,13 @@
                 <groupId>org.jboss.resteasy</groupId>
                 <artifactId>resteasy-client</artifactId>
                 <version>${resteasy.client.version}</version>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
                 <scope>import</scope>
             </dependency>
 

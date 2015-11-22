@@ -1,5 +1,8 @@
 package com.crxmarkets.exercise.presentation.web.exceptions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
@@ -13,11 +16,13 @@ import javax.ws.rs.ext.Provider;
  */
 @Provider
 public class NumberFormatExceptionHandler implements ExceptionMapper<NumberFormatException> {
-    
+    private static final Logger logger = LoggerFactory.getLogger(NumberFormatExceptionHandler.class);
+
     private static final String FORMAT_ERROR_EXCEPTION_MSG = "Please, make request like /getWaterVolume?surface=1,2,3,4";
     
     @Override
     public Response toResponse(NumberFormatException e) {
+        logger.error("?surface parameter could not be parsed");
         return Response.status(401).entity(FORMAT_ERROR_EXCEPTION_MSG).build();
     }
 }

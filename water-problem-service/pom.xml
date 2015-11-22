@@ -14,7 +14,6 @@
 
     <properties>
         <api.version>1.0-SNAPSHOT</api.version>
-        <ejb.plugin.version>2.5.1</ejb.plugin.version>
     </properties>
 
     <dependencies>
@@ -24,13 +23,11 @@
             <version>${api.version}</version>
         </dependency>
 
-        <!-- TODO comments in pom -->
         <dependency>
             <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -38,9 +35,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ejb-plugin</artifactId>
-                <version>${ejb.plugin.version}</version>
                 <configuration>
-                    <ejbVersion>3.1</ejbVersion>
+                    <ejbVersion>3.2</ejbVersion>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>

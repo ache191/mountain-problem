@@ -5,17 +5,20 @@ import com.crxmarkets.exercise.api.service.solver.WaterProblemSolverService;
 import javax.ejb.Stateless;
 
 /**
- * Created by a.chekanskiy@gmail.com on 19.11.15.
+ * @author oleksandr.chekanskyi
+ *
+ * More description:
+ * @see com.crxmarkets.exercise.api.service.solver.WaterProblemSolverService
  */
 @Stateless
 public class WaterProblemSolverServiceImpl implements WaterProblemSolverService {
-    //TODO add validation
+
     @Override
-    public int getWaterVolume(int[] surface) {
+    public int getWaterVolume(Integer[] surface) {
         return calculateVolume(surface);
     }
 
-    private int calculateVolume(int[] surface) {
+    private int calculateVolume(Integer[] surface) {
 
         int leftMax = 0;
         int rightMax = 0;
